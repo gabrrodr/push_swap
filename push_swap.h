@@ -6,7 +6,7 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:16:46 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/08/28 17:00:34 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:32:22 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	rotate(t_stack **stack);
 int	rev_rotate(t_stack **stack);
 
 
+int	check_sorted(t_stack **stack);
 
 
 # endif

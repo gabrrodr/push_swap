@@ -6,7 +6,7 @@
 #    By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/17 13:23:57 by gabrrodr          #+#    #+#              #
-#    Updated: 2023/08/28 17:01:28 by gabrrodr         ###   ########.fr        #
+#    Updated: 2023/08/29 17:22:38 by gabrrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC =	check.c \
 		main.c \
 		utils.c \
 		ops.c \
+		sort.c \
 
 OBJ_SRC = $(SRC:.c=.o)
 
