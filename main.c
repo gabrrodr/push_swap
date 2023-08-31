@@ -6,7 +6,7 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 18:00:57 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/08/28 17:50:21 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/08/31 16:30:23 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	init_stack(a, argc, argv);
-	print_list(*a);
 	//ft_printf("%d\n", find_max_value(a));
 	//ft_printf("%d\n", find_min_value(a));
-	rev_rotate(a);
-	print_list(*a);
+	//push(a, b);
+	sort(a, b);
+	//print_list(*b);
 }

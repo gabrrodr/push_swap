@@ -6,7 +6,7 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 15:21:27 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/08/18 18:10:51 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/08/30 17:27:01 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	ps_lstadd_front(t_stack **lst, t_stack *new)
 	*lst = new;
 }
 
-int	ps_lstsize(t_list *lst)
+int	ps_lstsize(t_stack *lst)
 {
 	int	i;
 

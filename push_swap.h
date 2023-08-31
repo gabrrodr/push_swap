@@ -6,7 +6,7 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:16:46 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/08/29 17:32:22 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/08/31 14:06:43 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_stack	*ps_lstnew(void *content);
 void	ps_lstadd_back(t_stack **lst, t_stack *new);
 t_stack	*ps_lstlast(t_stack *lst);
 void	ps_lstadd_front(t_stack **lst, t_stack *new);
-int	ps_lstsize(t_list *lst);
+int	ps_lstsize(t_stack *lst);
 
 
 void	*find_max_value(t_stack **stack);
@@ -48,6 +48,11 @@ int	rev_rotate(t_stack **stack);
 
 
 int	check_sorted(t_stack **stack);
+int	check_rev_sorted(t_stack **stack);
+
+void	sort(t_stack **stack1, t_stack **stack2);
+void	print_list(t_stack *lst);
+
 
 
 # endif

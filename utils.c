@@ -6,7 +6,7 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:19:53 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/08/29 18:34:38 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/08/30 18:35:22 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,16 +59,18 @@ void	*find_min_value(t_stack **stack)
 int	check_sorted(t_stack **stack)
 {
 	int	i;
-	
-	i = (*stack)->content;
-	while (stack)
+	t_stack	*node;
+
+	node = (*stack);
+	i = (int)(long)(node)->content;
+	while (node)
 	{
-		if (i > (*stack)->content)
+		if (i > (int)(long)(node)->content)
 		{
 			return (0);
 		}
-		i = (*stack)->content;
-		(*stack) = (*stack)->next; 
+		i = (int)(long)(node)->content;
+		(node) = (node)->next; 
 	}
 	return (1);
 }
@@ -76,16 +78,18 @@ int	check_sorted(t_stack **stack)
 int	check_rev_sorted(t_stack **stack)
 {
 	int	i;
-	
-	i = (*stack)->content;
-	while (stack)
+	t_stack	*node;
+
+	node = (*stack);
+	i = (int)(long)(node)->content;
+	while (node)
 	{
-		if (i < (*stack)->content)
+		if (i < (int)(long)(node)->content)
 		{
 			return (0);
 		}
-		i = (*stack)->content;
-		(*stack) = (*stack)->next; 
+		i = (int)(long)(node)->content;
+		(node) = (node)->next; 
 	}
 	return (1);
 }
