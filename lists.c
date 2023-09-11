@@ -6,13 +6,13 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 15:21:27 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/08/30 17:27:01 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/09/06 17:30:20 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ps_lstnew(void *content)
+t_stack	*ps_lstnew(int content)
 {
 	t_stack	*new;
 

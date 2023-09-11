@@ -6,7 +6,7 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 14:51:13 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/08/18 18:11:44 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/09/07 16:21:11 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	init_stack(t_stack **stack, int argc, char **argv)
 	}
 	while (args[i])
 	{
-		node = ps_lstnew((void *)(long)ft_atoi(args[i++]));
+		node = ps_lstnew((long)ft_atoi(args[i++]));
 		ps_lstadd_back(stack, node);
 	}
 	if (argc == 2)

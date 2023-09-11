@@ -1,36 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 14:43:14 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/09/04 18:29:23 by gabrrodr         ###   ########.fr       */
+/*   Created: 2023/09/05 18:00:52 by gabrrodr          #+#    #+#             */
+/*   Updated: 2023/09/07 13:54:17 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	assign_index(t_stack *sorted)
 {
-	unsigned int	a;
-
-	a = 0;
-	if (n == 0)
-		return (0);
-	while (s1[a] && s2[a] && (s1[a] == s2[a]) && (a < (n - 1)))
-		a++;
-	return ((unsigned char)s1[a] - (unsigned char)s2[a]);
+	int	index;
+	t_stack	*current;
+	
+	index = 0;
+	current = sorted;
+	while (current)
+	{
+		current->index = index;
+		index++;
+		current = current->next;
+	}
 }
-/*
-#include<stdio.h>
 
-int	main(void)
+int	find_index(int n, t_stack *sorted)
 {
-	char	str1[] = "abc";
-	char	str2[] = "abcd";
+	int	i;
 
-	printf("%d", ft_strncmp(str1, str2, 4));
+	i = 0;
+	while (sorted)
+	{
+		if (n == sorted->content)
+		{
+			break ;
+		}
+		sorted = sorted->next;
+		i++;
+	}
+	return (i);
 }
-*/

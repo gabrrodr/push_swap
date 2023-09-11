@@ -6,7 +6,7 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 17:11:48 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/08/31 14:37:29 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/09/07 16:08:53 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	swap(t_stack **stack)//swap first two nodes
 {
-	char	*tmp;
+	int	tmp;
 	
 	if ((*stack) && (*stack)->next)
 	{
@@ -22,7 +22,7 @@ int	swap(t_stack **stack)//swap first two nodes
 		(*stack)->content = (*stack)->next->content;
 		(*stack)->next->content = tmp;
 	}
-	return (0);
+	return (1);
 }
 
 int	push(t_stack **stack1, t_stack **stack2)//take the first element at the top of a/b and put it at the top of b/a.
@@ -30,6 +30,7 @@ int	push(t_stack **stack1, t_stack **stack2)//take the first element at the top 
 	t_stack	*node1;
 	t_stack	*node2;
 	
+	node2 = NULL;
 	if ((*stack1))
 	{
 		node1 = (*stack1);
@@ -72,6 +73,35 @@ int	rev_rotate(t_stack **stack)
 		node = ps_lstlast(*stack);
 		ps_lstadd_front(stack, node);
 		tmp->next = NULL;
+	}
+	return (1);
+}
+
+int	ops(t_stack **a, t_stack **b, char *op)
+{
+	int	success;
+
+	success = 0;
+	if (ft_strncmp("sa", op, 3) == 0)
+		success = swap(a);
+	if (ft_strncmp("sb", op, 3) == 0)
+		success = swap(b);
+	if (ft_strncmp("pa", op, 3) == 0)
+		success = push(b, a);
+	else if (ft_strncmp("pb", op, 3) == 0)
+		success = push(a, b);
+	if (ft_strncmp("ra", op, 3) == 0)
+		success = rotate(a);
+	else if (ft_strncmp("rb", op, 3) == 0)
+		success = rotate(b);
+	if (ft_strncmp("rra", op, 4) == 0)
+		success = rev_rotate(a);
+	else if (ft_strncmp("rrb", op, 4) == 0)
+		success = rev_rotate(b);
+	if (success)
+	{
+		ft_printf("%s\n", op);
+		return (0);
 	}
 	return (1);
 }

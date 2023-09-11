@@ -6,7 +6,7 @@
 #    By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/17 13:23:57 by gabrrodr          #+#    #+#              #
-#    Updated: 2023/08/29 17:22:38 by gabrrodr         ###   ########.fr        #
+#    Updated: 2023/09/06 17:24:47 by gabrrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,13 @@ NAME = push_swap
 SRC =	check.c \
 		frees.c \
 		init.c \
+		index.c \
 		lists.c \
 		main.c \
 		utils.c \
 		ops.c \
 		sort.c \
+		small_sort.c \
 
 OBJ_SRC = $(SRC:.c=.o)
 
