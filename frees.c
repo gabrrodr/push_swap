@@ -6,18 +6,18 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 17:54:16 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/09/07 17:51:20 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/09/11 12:08:21 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    free_array(char **array)
+void	free_array(char **array)
 {
-        int     i;
-        
+	int	i;
+
 	i = 0;
-	while(array[i])
+	while (array[i])
 	{
 		free(array[i++]);
 	}
@@ -56,7 +56,7 @@ void	free_content(t_stack **a, t_stack **b, t_stack **dupe_pos)
 	if (a)
 	{
 		free_data(a);
-	}	
+	}
 	if (b)
 	{
 		free_data(b);
@@ -64,5 +64,5 @@ void	free_content(t_stack **a, t_stack **b, t_stack **dupe_pos)
 	if (dupe_pos)
 	{
 		free_data(dupe_pos);
-	}	
+	}
 }

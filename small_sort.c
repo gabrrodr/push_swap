@@ -6,7 +6,7 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:46:14 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/09/07 10:56:57 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/09/11 11:13:07 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	sort_2(t_stack **stack)
 	if (node && node->next)
 	{
 		if ((int)(long)node->content > (int)(long)node->next->content)
-			ops(stack, NULL,"sa");
+			ops(stack, NULL, "sa");
 	}
 }
 
@@ -28,7 +28,7 @@ void	sort_3(t_stack **stack)
 {
 	int	min;
 	int	max;
-	
+
 	min = find_min_value(stack);
 	max = find_max_value(stack);
 	while (!check_sorted(stack))
@@ -39,9 +39,10 @@ void	sort_3(t_stack **stack)
 			ops(stack, NULL, "ra");
 		if ((int)(long)(*stack)->content == (int)(long)max)
 			ops(stack, NULL, "ra");
-		if ((int)(long)(ps_lstlast(*stack))->content == (int)(long)min)	
+		if ((int)(long)(ps_lstlast(*stack))->content == (int)(long)min)
 			ops(stack, NULL, "ra");
-		if (!check_sorted(stack) && (int)(long)(*stack)->content == (int)(long)min)
+		if (!check_sorted(stack) && 
+			(int)(long)(*stack)->content == (int)(long)min)
 			ops(stack, NULL, "rra");
 	}
 }

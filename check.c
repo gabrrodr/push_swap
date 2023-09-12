@@ -6,7 +6,7 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:25:55 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/08/18 14:13:12 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/09/12 14:38:34 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	check_numbers(char *nbr)
 {
 	int	i;
-	
+
 	i = 0;
 	if (nbr[0] == '+' || nbr[0] == '-')
 		i++;
@@ -32,14 +32,14 @@ int	check_numbers(char *nbr)
 			return (1);
 		}
 	}
-	return (0);	
+	return (0);
 }
 
-int	check_repeat(int numbers, char **args, int i)
+int	check_repeat(long numbers, char **args, int i)
 {
-	while(args[++i])
+	while (args[++i])
 	{
-		if (ft_atoi(args[i]) == numbers)
+		if (ps_atol(args[i]) == numbers)
 		{
 			write(2, "Error\n", 6);
 			return (1);
@@ -50,15 +50,16 @@ int	check_repeat(int numbers, char **args, int i)
 
 int	check_array(char **args, int i)
 {
-	int	numbers;
-	
+	long	numbers;
+
 	while (args[i])
 	{
-		numbers = ft_atoi(args[i]);
+		numbers = ps_atol(args[i]);
 		if (check_numbers(args[i]))
 			return (1);
 		if (check_repeat(numbers, args, i))
 			return (1);
+		
 		if (numbers < -2147483648 || numbers > 2147483647)
 		{
 			write(2, "Error\n", 6);
@@ -72,11 +73,11 @@ int	check_array(char **args, int i)
 int	check_args(int argc, char **argv)
 {
 	char	**args;
-	int	i;
-	int	valid;
-	
+	int		i;
+	int		valid;
+
 	i = 0;
-	if(argc == 2)
+	if (argc == 2)
 		args = ft_split(argv[1], ' ');
 	else
 	{

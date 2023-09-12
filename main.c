@@ -6,7 +6,7 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 18:00:57 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/09/07 17:57:22 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/09/11 11:13:53 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ void	print_list(t_stack *lst)
 int	main(int argc, char **argv)
 {
 	t_stack	**a;
-	t_stack **b;
+	t_stack	**b;
 	t_stack	**dupe_pos;
-	
+
 	if (argc < 2)
 		return (1);
-	if(check_args(argc, argv))
+	if (check_args(argc, argv))
 		return (1);
 	a = malloc(sizeof(t_stack *));
 	b = malloc(sizeof(t_stack *));

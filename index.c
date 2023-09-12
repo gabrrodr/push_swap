@@ -6,7 +6,7 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 18:00:52 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/09/07 13:54:17 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/09/11 11:17:12 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	assign_index(t_stack *sorted)
 {
-	int	index;
+	int		index;
 	t_stack	*current;
-	
+
 	index = 0;
 	current = sorted;
 	while (current)

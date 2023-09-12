@@ -6,16 +6,16 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 17:11:48 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/09/07 16:08:53 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/09/11 11:22:07 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	swap(t_stack **stack)//swap first two nodes
+int	swap(t_stack **stack)
 {
 	int	tmp;
-	
+
 	if ((*stack) && (*stack)->next)
 	{
 		tmp = (*stack)->content; 
@@ -25,11 +25,11 @@ int	swap(t_stack **stack)//swap first two nodes
 	return (1);
 }
 
-int	push(t_stack **stack1, t_stack **stack2)//take the first element at the top of a/b and put it at the top of b/a.
+int	push(t_stack **stack1, t_stack **stack2)
 {
 	t_stack	*node1;
 	t_stack	*node2;
-	
+
 	node2 = NULL;
 	if ((*stack1))
 	{
@@ -64,7 +64,7 @@ int	rev_rotate(t_stack **stack)
 {
 	t_stack	*node;
 	t_stack	*tmp;
-	
+
 	if ((*stack) && (*stack)->next)
 	{
 		tmp = (*stack);

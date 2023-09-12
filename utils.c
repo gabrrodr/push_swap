@@ -6,7 +6,7 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:19:53 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/09/07 11:13:45 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/09/12 14:35:42 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@ int	find_max_value(t_stack **stack)
 	t_stack	*max_v;
 	t_stack	*compare;
 	t_stack	*last;
-	
+
 	max_v = (*stack);
 	compare = max_v->next;
 	last = ps_lstlast((*stack));
-	
 	while (max_v && compare)
 	{
 		if ((int)(long)max_v->content < (int)(long)compare->content)
@@ -39,11 +38,10 @@ int	find_min_value(t_stack **stack)
 	t_stack	*min_v;
 	t_stack	*compare;
 	t_stack	*last;
-	
+
 	min_v = (*stack);
 	compare = min_v->next;
 	last = ps_lstlast(*stack);
-	
 	while (min_v && compare)
 	{
 		if ((int)(long)min_v->content > (int)(long)compare->content)
@@ -63,7 +61,8 @@ int	check_sorted(t_stack **stack)
 	node = (*stack);
 	while (node)
 	{
-		if (node->next && (int)(long)(node)->content > (int)(long)(node)->next->content)
+		if (node->next && 
+			(int)(long)(node)->content > (int)(long)(node)->next->content)
 		{
 			return (0);
 		}
@@ -74,7 +73,7 @@ int	check_sorted(t_stack **stack)
 
 int	check_rev_sorted(t_stack **stack)
 {
-	int	i;
+	int		i;
 	t_stack	*node;
 
 	node = (*stack);
@@ -91,38 +90,27 @@ int	check_rev_sorted(t_stack **stack)
 	return (1);
 }
 
-void	bubble_sort(t_stack *a)
+long	ps_atol(const char *nptr)
 {
-	int	tmp;
-	bool	swapped;
-	t_stack	*current;
-	t_stack	*prev;
+	int		sign;
+	long	result;
+	int		i;
 
-	prev = NULL;
-	if (a == NULL)
-		return ;
-	if (a->next == NULL)
-		return ;
-	swapped = true;
-	while (swapped)
+	sign = 1;
+	result = 0;
+	i = 0;
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '+' || nptr[i] == '-')
 	{
-		swapped = false;
-		current = a;
-		while (current->next)
-		{
-			prev = current;
-			current = current->next;
-			if (current != NULL)
-			{
-				if (current->content < prev->content)
-				{
-					tmp = prev->content;
-					prev->content = current->content;
-					current->content = tmp;
-					swapped = true;
-				}	 
-			}	
-		}
-	}	
-	
+		if (nptr[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		result = (result * 10) + (nptr[i] - 48);
+		i++;
+	}
+	return (result * sign);
 }

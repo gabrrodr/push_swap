@@ -6,7 +6,7 @@
 /*   By: gabrrodr <gabrrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 14:51:13 by gabrrodr          #+#    #+#             */
-/*   Updated: 2023/09/07 16:21:11 by gabrrodr         ###   ########.fr       */
+/*   Updated: 2023/09/11 10:57:45 by gabrrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	init_stack(t_stack **stack, int argc, char **argv)
 {
 	char	**args;
-	t_stack *node;
-	int	i;
-	
+	t_stack	*node;
+	int		i;
+
 	i = 0;
 	node = NULL;
 	if (argc == 2)
